@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+    );
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NeuroSTEM — AI-Powered STEM Learning for Every Mind</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+   
+    
+        {
+        
+}
+</script>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-icon">🧠⚛️</span>
+                <span>Neuro<span style="color:var(--accent);">STEM</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">HowItWorks</a></li>
+                <li><a href="#subjects-section">Subjects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="nav-cta-mobile" style="display:none;"><a href="#subjects-section" class="btn btn-accent btn-sm">Try Now</a></li>
+            </ul>
+            <a href="#subjects-section" class="btn btn-accent btn-sm nav-cta">Try Now</a>
+            <button class="btn btn-ghost btn-sm nav-auth" id="authOpenBtn">Account</button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark/light theme" aria-label="Toggle theme">🌙</button>
+<div id="google_translate_element"></div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="badge"><span class="badge-dot"></span> Free · AI-Powered · For All Learners</span>
+                </div>
+                <h1 class="hero-heading">AI-Powered <span class="accent-text">STEM Learning</span>, Built for Every Mind</h1>
+                <p class="hero-sub">Making Math and Science education accessible for students with ADHD, Dyslexia, and all learning styles — from Grade 1 to PhD — using Artificial Intelligence.</p>
+                <div class="hero-btns">
+                    <a href="#subjects-section" class="btn btn-accent btn-lg">✨ Try It Now</a>
+                    <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works →</a>
+                </div>
+                <div class="hero-stats">
+                    <span class="stat-pill">🧠 1 in 5 students are neurodivergent</span>
+                    <span class="stat-pill">📚 Covers Math + Science</span>
+                    <span class="stat-pill">🌍 Grade 1 to PhD</span>
+                    <span class="stat-pill">🔊 Built-in voice support</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="formula-card">
+                    <div class="card-glow"></div>
+                    <div class="formula-card-label">Input</div>
+                    <div class="formula-before">E = mc²</div>
+                    <div class="formula-arrow">↓</div>
+                    <div class="formula-card-label" style="color:var(--accent);">Simplified</div>
+                    <div class="formula-after">A tiny amount of mass holds <strong>enormous</strong> energy — that's Einstein's greatest insight ✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="selector-section bg-alt" id="subjects-section">
+        <div class="container">
+            <h2 class="section-heading">What are you studying?</h2>
+            <p class="section-sub">Select your subject and education level before pasting content.</p>
+            <div class="subject-toggle">
+                <button class="subject-btn active" data-subject="math" id="btnMath">📐 Mathematics</button>
+                <button class="subject-btn" data-subject="science" id="btnScience">🔬 Science</button>
+            </div>
+            <div class="level-cards">
+                <div class="level-card active" data-level="grade1-8">
+                    <span class="level-icon">🏫</span>
+                    <span class="level-title">Grade 1–8</span>
+                    <span class="level-age">Age 5–13</span>
+                </div>
+                <div class="level-card" data-level="grade9-12">
+                    <span class="level-icon">📚</span>
+                    <span class="level-title">Grade 9–12</span>
+                    <span class="level-age">Age 14–18</span>
+                </div>
+                <div class="level-card" data-level="undergrad">
+                    <span class="level-icon">🎓</span>
+                    <span class="level-title">Undergraduate</span>
+                    <span class="level-age">Age 18–22</span>
+                </div>
+                <div class="level-card" data-level="phd">
+                    <span class="level-icon">🔬</span>
+                    <span class="level-title">Graduate / PhD</span>
+                    <span class="level-age">Age 22+</span>
+                </div>
+            </div>
+            <p class="selector-info">✅ Selected: <strong id="selectionDisplay">Mathematics · Grade 1–8</strong></p>
+        </div>
+    </section>
+
+    <section class="input-section" id="input-section">
+        <div class="container">
+            <h2 class="section-heading">Simplify Your STEM Content</h2>
+            <p class="section-sub">Paste any difficult Math or Science text below. Our AI will explain it at your level.</p>
+            <div class="input-card">
+                <div class="textarea-wrap">
+                    <textarea id="stemInput" placeholder="Paste your STEM content here… e.g. &quot;Explain the second law of thermodynamics&quot; or &quot;What is integration in calculus?&quot;" rows="7" maxlength="3000"></textarea>
+                    <div class="textarea-footer">
+                        <button class="clear-btn" id="clearInputBtn" title="Clear input" aria-label="Clear input">✕</button>
+                        <span class="char-counter" id="charCounter">0 / 3000</span>
+                    </div>
+                </div>
+                <div class="input-actions">
+                    <button class="btn btn-accent btn-lg" id="simplifyBtn">✨ Simplify</button>
+                    <button class="btn btn-ghost" id="readInputBtn">🔊 Read Aloud</button>
+                    <button class="btn btn-ghost" id="clearAllBtn">🗑️ Clear</button>
+                </div>
+                <p class="input-helper">Works with formulas, paragraphs, textbook excerpts, and research abstracts.</p>
+                <div class="example-chips">
+                    <span class="chip-label">Try an example:</span>
+                    <button class="chip" data-q="What is Newton's Second Law?">Newton's Second Law</button>
+                    <button class="chip" data-q="Explain integration by parts in calculus">Integration by parts</button>
+                    <button class="chip" data-q="What is CRISPR and how does it work?">What is CRISPR?</button>
+                    <button class="chip" data-q="Explain the Pythagorean theorem">Pythagorean theorem</button>
+                    <button class="chip" data-q="What is quantum entanglement?">Quantum entanglement</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="output-section bg-alt" id="output-section">
+        <div class="container">
+            <div class="output-card" id="outputCard">
+                <div class="output-header">
+                    <h2 class="section-heading" style="margin:0;font-size:1.5rem;">Your Simplified Explanation</h2>
+                    <div class="level-badge" id="levelBadge">Mathematics · Grade 1–8</div>
+                </div>
+                <div class="loading-state" id="loadingState" style="display:none;">
+                    <div class="loader-ring"></div>
+                    <p>AI is thinking…</p>
+                </div>
+                <div class="tab-bar" id="tabBar" style="display:none;">
+                    <button class="tab-btn active" data-tab="simple">💡 Simple Explanation</button>
+                    <button class="tab-btn" data-tab="steps">🪜 Step by Step</button>
+                    <button class="tab-btn" data-tab="terms">📖 Key Terms</button>
+                    <button class="tab-btn" data-tab="formulas">📐 Formulas</button>
+                    <button class="tab-btn" data-tab="jargon">🔍 Jargon Buster</button>
+                    <button class="tab-btn" data-tab="quiz">🧠 Quiz Me</button>
+                </div>
+                <div id="tabContent">
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">🤖</div>
+                        <p>Your AI explanation will appear here.</p>
+                        <p style="font-size:0.85rem;color:var(--text-muted);">Paste content above and click <strong>✨ Simplify</strong></p>
+                    </div>
+                    <div id="simpleTab" class="tab-panel" style="display:none;"></div>
+                    <div id="stepsTab" class="tab-panel" style="display:none;"></div>
+                    <div id="termsTab" class="tab-panel" style="display:none;"></div>
+                    <div id="formulasTab" class="tab-panel" style="display:none;"></div>
+                    <div id="jargonTab" class="tab-panel" style="display:none;"></div>
+                    <div id="quizTab" class="tab-panel" style="display:none;"></div>
+                </div>
+                <div class="output-actions" id="outputActions" style="display:none;">
+                    <button class="btn btn-ghost btn-sm" id="readOutputBtn">🔊 Read Aloud</button>
+                    <button class="btn btn-ghost btn-sm" id="copyOutputBtn">📋 Copy</button>
+                    <button class="btn btn-ghost btn-sm" id="simplifyMoreBtn">🔄 Simplify More</button>
+                    <button class="btn btn-ghost btn-sm" id="deeperBtn">🔍 Go Deeper</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-section" id="flashcards-section">
+        <div class="container">
+            <div class="section-head split">
+                <div>
+                    <h2 class="section-heading">Flashcards Studio</h2>
+                    <p class="section-sub">Premium, adaptive flashcards built for focus, speed, and retention.</p>
+                </div>
+                <div class="section-pill" id="flashcardSelection">Mathematics · Grade 1–8</div>
+            </div>
+            <div class="flashcard-layout">
+                <div class="flashcard-controls">
+                    <div class="panel-card">
+                        <h3>Generate a Deck</h3>
+                        <label class="form-label" for="flashcardInput">Questions & Answers</label>
+                        <textarea id="flashcardInput" class="form-input form-textarea" rows="5" maxlength="3000" placeholder="Paste content to create flashcards. One Q&A per line or separated by blank lines."></textarea>
+                        <div class="panel-row">
+                            <div>
+                                <label class="form-label" for="flashcardTopicInput">Topic</label>
+                                <input id="flashcardTopicInput" class="form-input" type="text" placeholder="e.g. React Hooks">
+                            </div>
+                            <div>
+                                <label class="form-label" for="flashcardCount">Cards</label>
+                                <select id="flashcardCount" class="form-input">
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                    <option value="8" selected>8</option>
+                                    <option value="10">10</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="panel-actions">
+                            <button class="btn btn-accent" id="flashcardGenerateBtn">✨ Generate Flashcards</button>
+                            <button class="btn btn-ghost" id="flashcardClearBtn">Clear</button>
+                        </div>
+                        <p class="tool-status" id="flashcardStatus"></p>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Filters + Revision</h3>
+                        <label class="form-label" for="flashcardTopicFilter">Topic</label>
+                        <select id="flashcardTopicFilter" class="form-input">
+                            <option value="">All topics</option>
+                        </select>
+                        <div class="filter-chips" id="flashcardTypeFilter">
+                            <button class="chip active" data-type="">All</button>
+                        </div>
+                        <div class="switch-row">
+                            <label class="switch">
+                                <input type="checkbox" id="flashcardBookmarkFilter">
+                                <span class="switch-slider"></span>
+                            </label>
+                            <span>Bookmarks only</span>
+                        </div>
+                        <div class="switch-row">
+                            <label class="switch">
+                                <input type="checkbox" id="flashcardWeakFilter">
+                                <span class="switch-slider"></span>
+                            </label>
+                            <span>Smart revision (weak cards)</span>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Timed Session</h3>
+                        <label class="form-label" for="flashcardTimerSelect">Duration</label>
+                        <select id="flashcardTimerSelect" class="form-input">
+                            <option value="0">No timer</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600">10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1200">20 minutes</option>
+                        </select>
+                        <div class="panel-actions">
+                            <button class="btn btn-accent" id="flashcardStartSessionBtn">Start Session</button>
+                            <button class="btn btn-ghost" id="flashcardEndSessionBtn" disabled>End Session</button>
+                        </div>
+                        <div class="session-timer" id="flashcardTimerDisplay">00:00</div>
+                    </div>
+                </div>
+                <div class="flashcard-stage">
+                    <div class="flashcard-stats">
+                        <div>
+                            <span class="stat-label">Progress</span>
+                            <div class="progress-bar"><span id="flashcardProgressFill"></span></div>
+                        </div>
+                        <div class="stat-row">
+                            <div><strong id="flashcardProgressPercent">0%</strong><span>Mastery</span></div>
+                            <div><strong id="flashcardKnownCount">0</strong><span>Know</span></div>
+                            <div><strong id="flashcardUnknownCount">0</strong><span>Don’t Know</span></div>
+                            <div><strong id="flashcardStreakCount">0</strong><span>Streak</span></div>
+                        </div>
+                    </div>
+                    <div class="flashcard-viewport">
+                        <div class="flashcard-swipe" id="flashcardSwipe">
+                            <div class="flashcard-inner" id="flashcardInner">
+                                <div class="flashcard-face flashcard-front" id="flashcardFront">
+                                    <p>Generate a deck to begin.</p>
+                                </div>
+                                <div class="flashcard-face flashcard-back" id="flashcardBack">
+                                    <p>Answers will appear here.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flashcard-meta">
+                            <span id="flashcardTopicLabel">Topic: —</span>
+                            <span id="flashcardTypeLabel">Type: —</span>
+                        </div>
+                    </div>
+                    <div class="flashcard-actions">
+                        <button class="btn btn-ghost" id="flashcardFlipBtn">Flip Card</button>
+                        <button class="btn btn-ghost" id="flashcardBookmarkBtn">☆ Bookmark</button>
+                        <button class="btn btn-ghost" id="flashcardDontBtn">Don’t Know</button>
+                        <button class="btn btn-accent" id="flashcardKnowBtn">Know</button>
+                    </div>
+                    <div class="flashcard-footer">
+                        <span id="flashcardCardIndex">Card 0 of 0</span>
+                        <button class="btn btn-ghost btn-sm" id="flashcardShuffleBtn">Shuffle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-section bg-alt" id="quiz-bank-section">
+        <div class="container">
+            <div class="section-head split">
+                <div>
+                    <h2 class="section-heading">AI Quiz Bank</h2>
+                    <p class="section-sub">Unlimited topic-based quizzes with adaptive difficulty and analytics.</p>
+                </div>
+                <div class="section-pill" id="quizSelection">Mathematics · Grade 1–8</div>
+            </div>
+            <div class="quiz-layout">
+                <div class="quiz-controls">
+                    <div class="panel-card">
+                        <h3>Start a Session</h3>
+                        <label class="form-label" for="quizTopicInput">Topic</label>
+                        <input id="quizTopicInput" class="form-input" type="text" placeholder="e.g. Photosynthesis">
+                        <div class="difficulty-row" id="quizDifficultyRow">
+                            <button class="chip active" data-difficulty="easy">Easy</button>
+                            <button class="chip" data-difficulty="medium">Medium</button>
+                            <button class="chip" data-difficulty="hard">Hard</button>
+                        </div>
+                        <label class="form-label" for="quizTimerSelect">Session timer</label>
+                        <select id="quizTimerSelect" class="form-input">
+                            <option value="0">No timer</option>
+                            <option value="600">10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1200">20 minutes</option>
+                            <option value="1800">30 minutes</option>
+                        </select>
+                        <div class="panel-actions">
+                            <button class="btn btn-accent" id="quizStartBtn">Start Quiz</button>
+                            <button class="btn btn-ghost" id="quizGenerateMoreBtn" disabled>Generate More</button>
+                        </div>
+                        <p class="tool-status" id="quizStatus"></p>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Performance</h3>
+                        <div class="stat-row">
+                            <div><strong id="quizScore">0</strong><span>Score</span></div>
+                            <div><strong id="quizAccuracy">0%</strong><span>Accuracy</span></div>
+                            <div><strong id="quizStreak">0</strong><span>Streak</span></div>
+                            <div><strong id="quizTimerDisplay">00:00</strong><span>Time Left</span></div>
+                        </div>
+                        <div class="panel-actions">
+                            <button class="btn btn-ghost" id="quizRetryBtn" disabled>Retry Incorrect</button>
+                        </div>
+                        <div class="recommendation-card">
+                            <p class="rec-title">Recommended next difficulty</p>
+                            <strong id="quizRecommendedDifficulty">—</strong>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Weak Topics</h3>
+                        <div class="topic-list" id="quizWeakTopics">
+                            <p class="muted">Analytics will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-stage">
+                    <div class="quiz-questions" id="quizBankOutput">
+                        <div class="empty-state small">
+                            <div class="empty-icon">📊</div>
+                            <p>Start a session to generate questions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-heading">Everything You Need to Learn Differently</h2>
+            <p class="section-sub">Built specifically for neurodivergent learners — but useful for everyone.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <div class="feature-tag">Core Feature</div>
+                    <h3>AI Simplification</h3>
+                    <p>Transforms dense STEM content into clear, grade-appropriate explanations instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔊</span>
+                    <div class="feature-tag">Accessibility</div>
+                    <h3>Voice Narration</h3>
+                    <p>Listen to any explanation read aloud at a comfortable speed. Great for dyslexic learners.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📐</span>
+                    <div class="feature-tag">Math + Science</div>
+                    <h3>Formula Explainer</h3>
+                    <p>Any formula — from E=mc² to integration — broken down into plain English, step by step.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎓</span>
+                    <div class="feature-tag">Personalized</div>
+                    <h3>4 Education Levels</h3>
+                    <p>From Grade 1 stories to PhD research analysis. One tool for every stage of education.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔬</span>
+                    <div class="feature-tag">Dual Subject</div>
+                    <h3>Science & Math Both</h3>
+                    <p>Covers Biology, Chemistry, Physics, Algebra, Calculus, Statistics and more.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📖</span>
+                    <div class="feature-tag">Vocabulary</div>
+                    <h3>Jargon Buster</h3>
+                    <p>Automatically identifies hard words and explains every one in simple language.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <div class="feature-tag">Learning</div>
+                    <h3>Instant Quizzes</h3>
+                    <p>Auto-generates comprehension questions after every explanation to test understanding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase-section bg-alt" id="subjects-detail">
+        <div class="container">
+            <h2 class="section-heading">What Subjects Does It Cover?</h2>
+            <div class="showcase-grid">
+                <div class="showcase-col">
+                    <h3 class="showcase-title">📐 Mathematics</h3>
+                    <ul class="showcase-list">
+                        <li>Arithmetic & Number Theory</li>
+                        <li>Algebra & Equations</li>
+                        <li>Geometry & Trigonometry</li>
+                        <li>Calculus (Differentiation & Integration)</li>
+                        <li>Statistics & Probability</li>
+                        <li>Linear Algebra</li>
+                        <li>Discrete Mathematics</li>
+                        <li>Number Systems</li>
+                    </ul>
+                </div>
+                <div class="showcase-col">
+                    <h3 class="showcase-title">🔬 Science</h3>
+                    <ul class="showcase-list">
+                        <li>Biology (Cell, Genetics, Evolution)</li>
+                        <li>Chemistry (Organic, Inorganic, Physical)</li>
+                        <li>Physics (Mechanics, Thermodynamics, Quantum)</li>
+                        <li>Earth & Environmental Science</li>
+                        <li>Astronomy & Space Science</li>
+                        <li>Computer Science Concepts</li>
+                        <li>Neuroscience (higher levels)</li>
+                        <li>Research Paper Simplification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-section" id="how-it-works" style="padding-top:2rem;"></section>
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center; margin-top:0; padding-top:0;">How It Works</h2>
+            <div class="steps-row">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-icon">🎯</div>
+                    <h3>Choose Your Level</h3>
+                    <p>Select your education level and subject — Math or Science.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">📋</div>
+                    <h3>Paste Your Content</h3>
+                    <p>Copy any difficult STEM text from a textbook, paper, or website and paste it in.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">✨</div>
+                    <h3>AI Explains It</h3>
+                    <p>AI analyzes the content and rewrites it at your exact level with analogies and key terms.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <div class="step-icon">🚀</div>
+                    <h3>Learn Your Way</h3>
+                    <p>Read it, listen to it, test yourself with a quiz, or go deeper. Your choice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section bg-alt">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">The Problem We're Solving</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-num">1 in 5</div>
+                    <div class="stat-label">Students globally are neurodivergent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">70%</div>
+                    <div class="stat-label">Neurodivergent students struggle with standard STEM resources</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">3×</div>
+                    <div class="stat-label">More likely to drop STEM without accessibility support</div>
+                </div>
+                <div class="stat-card accent-stat">
+                    <div class="stat-num">$0</div>
+                    <div class="stat-label">Cost to use NeuroSTEM</div>
+                </div>
+            </div>
+            <blockquote class="pull-quote">
+                "Accessible education doesn't lower the bar. It removes the unnecessary obstacles in front of it."
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">Why This Matters</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p>I always thought I was bad at science. Turns out I just needed it explained differently.</p>
+                    <div class="testimonial-author">— High school student with dyslexia</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p>As a teacher, I can now share any research article with my whole class — NeuroSTEM adapts it for everyone.</p>
+                    <div class="testimonial-author">— Science teacher, Grade 8</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark">"</div>
+                    <p>Finally a tool that explains calculus like I'm a human being, not a textbook.</p>
+                    <div class="testimonial-author">— Undergraduate engineering student</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section bg-alt" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-heading">Why We Built This</h2>
+                    <p>Millions of students around the world struggle not because they lack intelligence, but because STEM education wasn't designed with their minds in mind.</p>
+                    <p>Students with ADHD, dyslexia, dyscalculia, and other learning differences face textbooks written in dense jargon, formulas with no context, and walls of text with no structure.</p>
+                    <p>We built NeuroSTEM to change that. Using AI, we transform any STEM content — Math or Science, Grade 1 to PhD — into explanations that actually make sense for your brain.</p>
+                    <p class="about-highlight">This is not a dumbing-down tool. It's an adaptation tool. The science stays accurate. The learning becomes possible.</p>
+                    <div class="about-tags">
+                        <span class="tag">🏆 Built at DSH Hacks V1</span>
+                        <span class="tag">🤖 AI × STEM Education</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-card-stack">
+                        <div class="about-mini-card">🧠 ADHD</div>
+                        <div class="about-mini-card">📖 Dyslexia</div>
+                        <div class="about-mini-card">🔢 Dyscalculia</div>
+                        <div class="about-mini-card">🌈 All Learners</div>
+                    </div>
+                    <div class="about-big-text">Every mind<br>deserves<br>clarity.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">How NeuroSTEM Is Different</h2>
+            <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Not just another AI chatbot. Purpose-built for neurodivergent learners from the ground up.</p>
+
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight-col">🧠 NeuroSTEM</th>
+                            <th>ChatGPT</th>
+                            <th>Gemini / Others</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Built for neurodivergent learners</strong></td>
+                            <td class="highlight-col check">✅ Purpose-built</td>
+                            <td class="cross">❌ General purpose</td>
+                            <td class="cross">❌ General purpose</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Structured simplification tabs</strong></td>
+                            <td class="highlight-col check">✅ Simple · Steps · Terms · Quiz</td>
+                            <td class="partial">⚠️ Manual prompting needed</td>
+                            <td class="partial">⚠️ Manual prompting needed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Distraction-free layout</strong></td>
+                            <td class="highlight-col check">✅ ADHD-optimised spacing</td>
+                            <td class="cross">❌ Cluttered chat interface</td>
+                            <td class="cross">❌ Cluttered chat interface</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Step-by-step breakdowns</strong></td>
+                            <td class="highlight-col check">✅ Automatic numbered steps</td>
+                            <td class="partial">⚠️ Only if asked</td>
+                            <td class="partial">⚠️ Only if asked</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi-level personalisation</strong></td>
+                            <td class="highlight-col check">✅ Grade 1–8 to PhD</td>
+                            <td class="partial">⚠️ One-size-fits-all response</td>
+                            <td class="partial">⚠️ One-size-fits-all response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Built-in voice support</strong></td>
+                            <td class="highlight-col check">✅ Read-aloud with one click</td>
+                            <td class="cross">❌ Separate feature</td>
+                            <td class="cross">❌ Separate feature</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Auto-generated quizzes</strong></td>
+                            <td class="highlight-col check">✅ Instant comprehension check</td>
+                            <td class="partial">⚠️ Must be requested</td>
+                            <td class="partial">⚠️ Must be requested</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key term glossary</strong></td>
+                            <td class="highlight-col check">✅ Automatic jargon buster</td>
+                            <td class="cross">❌ Not included</td>
+                            <td class="cross">❌ Not included</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-cards">
+                <div class="comparison-card">
+                    <span class="comp-icon">🎯</span>
+                    <h4>Purpose-Built</h4>
+                    <p>Designed specifically for neurodivergent learners, not retrofitted from a general chatbot.</p>
+                </div>
+                <div class="comparison-card">
+                    <span class="comp-icon">📊</span>
+                    <h4>Structured Output</h4>
+                    <p>Four organised tabs instead of one long wall of AI-generated text.</p>
+                </div>
+                <div class="comparison-card">
+                    <span class="comp-icon">🧩</span>
+                    <h4>No Prompting Needed</h4>
+                    <p>Every explanation automatically includes steps, terms, and a quiz — no extra instructions required.</p>
+                </div>
+                <div class="comparison-card">
+                    <span class="comp-icon">🌈</span>
+                    <h4>Inclusive by Default</h4>
+                    <p>High contrast, dyslexia-friendly fonts, generous spacing, and voice support built right in.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="future-section bg-alt">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">What's Coming Next</h2>
+            <div class="future-grid">
+                <div class="future-card">
+                    <span class="coming-soon">Soon</span>
+                    <span>🌍</span><span>Multilingual Support</span>
+                    <p>Explain STEM concepts in your native language</p>
+                </div>
+                <a class="future-card future-link" href="#flashcards-section">
+                    <span class="coming-soon live">Live</span>
+                    <span>🃏</span><span>Flashcard Generator</span>
+                    <p>Auto-create revision flashcards from any content</p>
+                    <span class="future-cta">Try it →</span>
+                </a>
+                <a class="future-card future-link" href="#quiz-bank-section">
+                    <span class="coming-soon live">Live</span>
+                    <span>📊</span><span>AI Quiz Bank</span>
+                    <p>Subject-specific quizzes by topic and level</p>
+                    <span class="future-cta">Try it →</span>
+                </a>
+                <div class="future-card">
+                    <span class="coming-soon">Soon</span>
+                    <span>🖥️</span><span>Chrome Extension</span>
+                    <p>Transform any webpage without copy-pasting</p>
+                </div>
+                <div class="future-card">
+                    <span class="coming-soon">Soon</span>
+                    <span>👤</span><span>Learning Profile</span>
+                    <p>Save your level, preferences, and progress</p>
+                </div>
+                <div class="future-card">
+                    <span class="coming-soon">Soon</span>
+                    <span>📱</span><span>Mobile App</span>
+                    <p>iOS and Android native app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">Our Mission</h2>
+            <p class="impact-statement">NeuroSTEM exists to make STEM education radically inclusive. Every student — regardless of how their brain is wired — deserves access to the knowledge that builds our world.</p>
+            <div class="impact-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">🎓</div>
+                    <h3>Educational Equity</h3>
+                    <p>Same quality of understanding for every learner</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🧠</div>
+                    <h3>Neurodivergent Inclusion</h3>
+                    <p>Built first for ADHD and dyslexic students</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🌍</div>
+                    <h3>Global Reach</h3>
+                    <p>Free, browser-based, works anywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section bg-alt" id="contact">
+        <div class="container">
+            <h2 class="section-heading" style="text-align:center;">Get In Touch</h2>
+            <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto;">Have feedback, want to collaborate, or just want to say hello?</p>
+            <div class="contact-form">
+                <input type="email" placeholder="Your email address" class="form-input" id="emailInput">
+                <textarea placeholder="Your message…" rows="5" class="form-input form-textarea" id="msgInput"></textarea>
+                <button class="btn btn-accent btn-lg" id="sendBtn" style="align-self:center;">Send Message</button>
+                <p class="form-note" id="formNote"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="authModal" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" id="authCloseBtn" aria-label="Close">✕</button>
+            <h3>NeuroSTEM Account</h3>
+            <p class="modal-sub">Sync your progress across sessions.</p>
+            <div class="auth-tabs">
+                <button class="chip active" data-auth="login">Login</button>
+                <button class="chip" data-auth="register">Register</button>
+            </div>
+            <form class="auth-form" id="authLoginForm">
+                <label class="form-label" for="authLoginEmail">Email</label>
+                <input id="authLoginEmail" class="form-input" type="email" placeholder="you@example.com" required>
+                <label class="form-label" for="authLoginPassword">Password</label>
+                <input id="authLoginPassword" class="form-input" type="password" placeholder="••••••••" required>
+                <button class="btn btn-accent" type="submit">Login</button>
+            </form>
+            <form class="auth-form hidden" id="authRegisterForm">
+                <label class="form-label" for="authRegisterEmail">Email</label>
+                <input id="authRegisterEmail" class="form-input" type="email" placeholder="you@example.com" required>
+                <label class="form-label" for="authRegisterPassword">Password</label>
+                <input id="authRegisterPassword" class="form-input" type="password" placeholder="At least 6 characters" required>
+                <button class="btn btn-accent" type="submit">Create Account</button>
+            </form>
+            <div class="auth-status" id="authStatus"></div>
+            <div class="auth-session" id="authSession" style="display:none;">
+                <p>Signed in as <strong id="authUserEmail">—</strong></p>
+                <button class="btn btn-ghost" id="authLogoutBtn">Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-logo">🧠⚛️ NeuroSTEM © 2026</span>
+            <span>Built for DSH Hacks V1 — AI × STEM Education</span>
+            <span>Made with ❤️ for inclusive learning</span>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script-fixed.js"></script>
+</body>
+</html>
+<!-- Modal -->
+<div id="featureModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:var(--surface); border-radius:16px; padding:2rem; max-width:500px; width:90%; position:relative;">
+    <button onclick="document.getElementById('featureModal').style.display='none'" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer;">✕</button>
+    <div id="modalIcon" style="font-size:2.5rem; margin-bottom:1rem;"></div>
+    <h3 id="modalTitle" style="margin-bottom:0.5rem;"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
