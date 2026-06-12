@@ -1,6 +1,7 @@
 ﻿
 (function() {
     // â”€â”€â”€ THEME INITIALIZATION â”€â”€â”€
+    const API_URL = "https://neurostem-backend-kt8l.onrender.com";
     function initializeTheme() {
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -63,7 +64,7 @@
         try {
             setLoading(true);
             
-            const response = await fetch('https://neuro-stem.onrender.com/api/stem/simplify', {
+            const response = await fetch(`${API_URL}/api/stem/simplify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -82,7 +83,7 @@
             };
 
             try {
-                const formulasRes = await fetch('https://neuro-stem.onrender.com/api/stem/extract-formulas', {
+                const formulasRes = await fetch(`${API_URL}/api/stem/extract-formulas`, {, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ content: stemInput.value })
@@ -94,7 +95,7 @@
             }
 
             try {
-                const jargonRes = await fetch('https://neuro-stem.onrender.com/api/stem/extract-jargon', {
+                const jargonRes = await fetch(`${API_URL}/api/stem/extract-jargon`, {, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ content: stemInput.value, level: selectedLevel })
