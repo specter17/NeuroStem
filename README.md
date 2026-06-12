@@ -505,17 +505,43 @@ Response: {
 ## 📁 Project Structure
 
 ```
-NeuroStem/
-├── server.js                 # Express backend server
-├── db.js                     # SQLite database initialization
-├── script.js                 # Frontend JavaScript logic
-├── index.html                # Frontend HTML structure
-├── styles.css                # Frontend styling
-├── .env.example              # Environment variables template
-├── package.json              # Node dependencies and scripts
-├── uploads/                  # User-uploaded images
-├── neurostem.db              # SQLite database (auto-created)
-└── README.md                 # This file
+webapp
+├─ BACKEND
+│  ├─ BACKEND
+│  │  ├─ .env
+│  │  ├─ data
+│  │  │  └─ neurostem.db
+│  │  ├─ db.js
+│  │  ├─ error.log
+│  │  ├─ eslint.config.js
+│  │  ├─ package-lock.json
+│  │  ├─ package.json
+│  │  ├─ README.md
+│  │  ├─ server-groq.js
+│  │  ├─ server.js
+│  │  ├─ test-groq.js
+│  │  ├─ uploads
+│  │  │  ├─ card-1779982341500-oi5g1z.jpg
+│  │  │  └─ card-1779982808618-9076bf.jpg
+│  │  └─ vite.config.js
+│  └─ package-lock.json
+└─ Frontend
+   ├─ .vercel
+   │  ├─ project.json
+   │  └─ README.txt
+   ├─ config.js
+   ├─ index.html
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ README.md
+   ├─ script-fixed.js
+   ├─ script-new.js
+   ├─ script-replace.js
+   ├─ script.js
+   ├─ serve.js
+   ├─ server.js
+   └─ style.css
+
 ```
 
 ### Database Schema
