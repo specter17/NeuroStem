@@ -132,7 +132,11 @@ const extractJsonObject = (text, contextLabel = "ai") => {
 
 // ─── Middleware ──────────────────────────────────────────────────────────────
 
-app.use(cors());
+app.use(cors({
+    origin: "https://neurostem.netlify.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json());
 await fs.mkdir(uploadDir, { recursive: true });
 await initDb();
