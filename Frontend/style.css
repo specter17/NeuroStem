@@ -1245,7 +1245,7 @@ textarea::placeholder { color: var(--text-muted); }
     padding-top: 0.6rem;
     border-top: 1px solid var(--border);
     color: var(--text);
-    display: none;
+    
 }
 
 .flashcard.revealed .flashcard-back { display: block; }
