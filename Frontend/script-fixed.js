@@ -1,8 +1,6 @@
 (function() {
     // Detect API URL based on current location
-    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-        ? 'http://localhost:3000'
-        : `http://${window.location.hostname}:3000`;
+    const API_URL = "https://neurostem-backend-kt8l.onrender.com";
     const tokenKey = 'neurostem_token';
     let authToken = localStorage.getItem(tokenKey) || '';
     let currentUser = null;
