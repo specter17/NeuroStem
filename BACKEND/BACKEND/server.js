@@ -1074,8 +1074,13 @@ app.use((err, req, res, next) => {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 
+// ❌ Remove this (CommonJS syntax, won't work with "type": "module")
 if (require.main === module) {
-  app.listen(3000, () => console.log('Running locally'));
+  app.listen(3000);
 }
 
-module.exports = app;
+// ✅ Replace with this (ESM syntax)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+export default app;
