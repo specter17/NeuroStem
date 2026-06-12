@@ -1074,12 +1074,8 @@ app.use((err, req, res, next) => {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 
-if (process.env.NODE_ENV !== "production") {
-    app.listen(3000, () => {
-        console.log("🚀 Server running on http://localhost:3000");
-        console.log("✅ Groq API connected");
-    });
+if (require.main === module) {
+  app.listen(3000, () => console.log('Running locally'));
 }
 
-// Export the app for Vercel's serverless functions using ESM syntax
-export default app;
+module.exports = app;
