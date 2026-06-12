@@ -133,7 +133,7 @@ const extractJsonObject = (text, contextLabel = "ai") => {
 // ─── Middleware ──────────────────────────────────────────────────────────────
 
 app.use(cors({
-    origin: "https://neurostem.netlify.app/",
+    origin: "https://neurostem.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
