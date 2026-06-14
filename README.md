@@ -526,9 +526,6 @@ webapp
 │  │  └─ vite.config.js
 │  └─ package-lock.json
 └─ Frontend
-   ├─ .vercel
-   │  ├─ project.json
-   │  └─ README.txt
    ├─ config.js
    ├─ index.html
    ├─ package-lock.json
